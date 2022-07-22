@@ -1,8 +1,13 @@
 import React, { FunctionComponent } from 'react'
+import SongDetail from './SongDetail'
+import SongList from './SongList'
 
 const App = () => {
     return (
-        <div className='app'>App</div>
+        <div className='app ui container'>
+            <SongList />
+            <SongDetail />
+        </div>
     )
 }
 
