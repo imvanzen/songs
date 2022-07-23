@@ -1,7 +1,9 @@
-import { Action, Song } from "../types"
+
+import { AnyAction, combineReducers } from 'redux'
+import { Song } from '../types'
 
 // Reducers
-export const songsReducer = (): Array<Song> => {
+const songsReducer = (): Array<Song> => {
     return [
         { title: 'No Scrubs', duration: '4:05' },
         { title: 'Macarena', duration: '2:30' },
@@ -10,10 +12,15 @@ export const songsReducer = (): Array<Song> => {
     ]
 }
 
-export const selectedSongReducer = (selectedSong: Song | null = null, action: Action) => {
+const selectedSongReducer = (selectedSong: Song | null = null, action: AnyAction) => {
     if (action.type === 'SONG_SELECTED') {
         return action.payload
     }
 
     return selectedSong
 }
+
+export default combineReducers({
+    songsReducer,
+    selectedSongReducer
+})
