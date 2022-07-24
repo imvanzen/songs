@@ -12,7 +12,7 @@ const songsReducer = (): Array<Song> => {
     ]
 }
 
-const selectedSongReducer = (selectedSong: Song | null = null, action: AnyAction) => {
+const selectedSongReducer = (selectedSong: Song | null = null, action: AnyAction): Song | null => {
     if (action.type === 'SONG_SELECTED') {
         return action.payload
     }
