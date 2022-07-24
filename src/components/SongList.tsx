@@ -1,20 +1,23 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { Key } from 'react'
 import { connect } from 'react-redux'
 import { Song } from '../types'
+import { selectSong } from '../actions'
+import { AnyAction } from 'redux'
 
 interface Props {
-    songs: Array<Song>
+    songs: Array<Song>,
+    selectSong: (song: Song) => AnyAction
 };
 
 const SongList = (props: Props) => {
-    const { songs } = props
-    const renderedSongs = songs.map(({ title }: Song) => (
-        <div className='item' key={title as Key}>
+    const { songs, selectSong } = props
+    const renderedSongs = songs.map((song: Song) => (
+        <div className='item' key={song.title as Key}>
             <div className='right floated content'>
-                <button className='ui button primary'>Select</button>
+                <button className='ui button primary' onClick={() => selectSong(song)}>Select</button>
             </div>
-            <div className='content'>{title}</div>
+            <div className='content'>{song.title}</div>
         </div>
     ))
     return (
@@ -30,4 +33,6 @@ const mapState = (state: any) => {
     }
 }
 
-export default connect(mapState)(SongList)
+export default connect(mapState, {
+    selectSong
+})(SongList)
