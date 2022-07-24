@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import { connect } from 'react-redux'
 
 const SongList = () => {
     return (
@@ -6,4 +7,4 @@ const SongList = () => {
     )
 }
 
-export default SongList
+export default connect()(SongList)
