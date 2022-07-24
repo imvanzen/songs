@@ -8,16 +8,16 @@ interface Props {
 
 const SongDetail = ({ selectedSong }: Props): ReactElement => {
     const renderSongDetail = () => {
-        if (selectedSong) {
-            return (
-                <>
-                    <h1>{selectedSong.title}</h1>
-                    <div>{selectedSong.duration}</div>
-                </>
-            )
+        if (selectedSong == null) {
+            return <h1>No song selected</h1>
         }
 
-        return <h1>No song selected</h1>
+        return (
+            <>
+                <h1>{selectedSong.title}</h1>
+                <div>{selectedSong.duration}</div>
+            </>
+        )
     }
 
     return (
