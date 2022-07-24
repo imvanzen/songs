@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Key } from 'react'
 import { connect } from 'react-redux'
 import { Song } from '../types'
@@ -10,7 +10,7 @@ interface Props {
     selectSong: (song: Song) => AnyAction
 };
 
-const SongList = (props: Props) => {
+const SongList = (props: Props): ReactElement => {
     const { songs, selectSong } = props
     const renderedSongs = songs.map((song: Song) => (
         <div className='item' key={song.title as Key}>

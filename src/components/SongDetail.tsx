@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { connect } from 'react-redux'
 import { Song } from '../types'
 
@@ -6,7 +6,7 @@ interface Props {
     selectedSong: Song
 }
 
-const SongDetail = ({ selectedSong }: Props) => {
+const SongDetail = ({ selectedSong }: Props): ReactElement => {
     const renderSongDetail = () => {
         if (selectedSong) {
             return (

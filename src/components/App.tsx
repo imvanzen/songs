@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import SongDetail from './SongDetail'
 import SongList from './SongList'
 
-const App = () => {
+const App = (): ReactElement => {
     return (
         <div className='app ui container grid stacked'>
             <div className='ui row'>
