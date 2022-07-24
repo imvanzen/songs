@@ -18,7 +18,7 @@ const SongList = (props: Props) => {
         </div>
     ))
     return (
-        <div className='song-list ui list'>
+        <div className='song-list ui divided list'>
             {renderedSongs}
         </div>
     )
