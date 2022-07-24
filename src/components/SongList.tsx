@@ -9,11 +9,13 @@ interface Props {
 
 const SongList = (props: Props) => {
     const { songs } = props
-    const renderedSongs = songs.map((song: Song, index: Key) => (
-        <div key={index}>Name: <b>{song.title}</b> Duration: <b>{song.duration}</b></div>
+    const renderedSongs = songs.map(({ title }: Song) => (
+        <div className='item' key={title as Key}>
+            Name: <b>{title}</b>
+        </div>
     ))
     return (
-        <div className='song-list'>
+        <div className='song-list ui list'>
             {renderedSongs}
         </div>
     )
