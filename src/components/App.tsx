@@ -5,13 +5,15 @@ import { selectSong } from '../actions'
 
 const App = () => {
     return (
-        <div className='app ui container grid'>
+        <div className='app ui container grid stacked'>
             <div className='ui row'>
                 <div className='column eight wide'>
                     <SongList />
                 </div>
+                <div className='column eight wide'>
+                    <SongDetail />
+                </div>
             </div>
-            <SongDetail />
         </div>
     )
 }

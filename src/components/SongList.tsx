@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Key } from 'react'
 import { connect } from 'react-redux'
 import { Song } from '../types'
