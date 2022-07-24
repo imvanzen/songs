@@ -14,8 +14,9 @@ const SongDetail = ({ selectedSong }: Props): ReactElement => {
 
         return (
             <>
-                <h1>{selectedSong.title}</h1>
-                <div>{selectedSong.duration}</div>
+                <h3>Details for:</h3>
+                <p>{selectedSong.title}</p>
+                <p>{selectedSong.duration}</p>
             </>
         )
     }
