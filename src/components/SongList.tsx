@@ -11,7 +11,10 @@ const SongList = (props: Props) => {
     const { songs } = props
     const renderedSongs = songs.map(({ title }: Song) => (
         <div className='item' key={title as Key}>
-            Name: <b>{title}</b>
+            <div className='right floated content'>
+                <button className='ui button primary'>Select</button>
+            </div>
+            <div className='content'>{title}</div>
         </div>
     ))
     return (
